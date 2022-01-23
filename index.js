@@ -1,6 +1,5 @@
 const Discord = require("discord.js")
 
-const TOKEN = ("ODQ2MzgwMjU1MjEyMDc3MDU2.YKurCQ.-3qBjnnWEOk8YYLDcot8iBU8mEI")
 
 const client = new Discord.Client({
     intents: [
@@ -20,4 +19,4 @@ client.on("messageCreate", (message) => {
 })
 
 
-client.login(TOKEN)
+client.login(process.env.token)
