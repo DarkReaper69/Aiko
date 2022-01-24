@@ -9,21 +9,22 @@ const client = new Discord.Client({
     ]
 })
 
-client.on("ready", () => {
-    console.log(`Logged in as ${client.user.tag}`)
-})
+let bot = {
+    client,
+    prefix: "p!",
+    owners: ["549288150841950218"]
+}
 
-client.on("messageCreate", (message) => {
-    if (message.content === "hi"){
-        message.reply("hello cutie")
-    }
-})
+client.commands = new Discord.Collection()
+client.events = new Discord.Collection()
 
-const WelcomeChannelId = "745423466416570450"
-client.on("guildMemberAdd", async (member) => {
-    member.guild.channels.cache.get(WelcomeChannelId).send({
-        content: `<@${member.id}> Welcome to the server! Have a cookie 🍪`,
-    })
-})
+client.loadEvents = (bot, reload) => require("./handlers/events")(bot,reload)
+
+client.loadCommands = (bot, reload) => require("./handlers/commands")(bot, reload)
+
+client.loadEvents(bot, false)
+client.loadCommands(bot, false)
+
+module.exports = bot
 
 client.login(process.env.TOKEN)
