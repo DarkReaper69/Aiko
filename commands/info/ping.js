@@ -1,6 +1,6 @@
 module.exports = {
-    name: ping,
-    category: info,
+    name: "ping",
+    category: "info",
     permissions: [],
     devOnly: false,
     run: ({client, message, args}) => {
