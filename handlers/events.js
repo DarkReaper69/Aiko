@@ -49,7 +49,4 @@ function initEvents(bot) {
         triggerEventHandler(bot, "messageCreate", message)
     })
 
-    client.on("interactionCreate", (message) => {
-        triggerEventHandler(bot, "messageCreate", message)
-        })
 }
