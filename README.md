@@ -1,4 +1,3 @@
 # pandabot
-a discord bot,
-old code had skill issue so i rewrote the whole code
+a discord bot i made for Panda Eyes' Discord Server
 
