@@ -10,6 +10,9 @@ module.exports = {
         if(target){
             const memberTarget = message.guild.members.cache.get(target.id);
             memberTarget.kick();
+
+            if(!target) return message.channel.send(`I couldn't kick ${target}`)
+
             const Embed = new MessageEmbed().setTitle("BEWM!>< get outta here haha").setDescription(`${target} has been kicked by ${message.author.tag}`).setTimestamp()
             message.channel.send({ embeds: [Embed] })
         }else{

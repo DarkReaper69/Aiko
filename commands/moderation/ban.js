@@ -10,6 +10,9 @@ module.exports = {
         if(target){
             const memberTarget = message.guild.members.cache.get(target.id);
             memberTarget.ban();
+
+            if(!target) return message.channel.send(`I couldn't ban ${target}`)
+
             const Embed = new MessageEmbed().setTitle("WOH! when the ban").setDescription(`${target} has been banned by ${message.author.tag}`).setTimestamp()
             message.channel.send({ embeds: [Embed] })
         }else{
