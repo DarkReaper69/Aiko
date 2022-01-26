@@ -9,3 +9,7 @@ uhhhhh idk how to write a readme file man sorry
 installations : 
 
 `npm install ms`
+
+to run bot:
+
+`node index.js`
