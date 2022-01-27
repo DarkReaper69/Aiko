@@ -10,6 +10,8 @@ installations :
 
 `npm install ms`
 
+`npm i dotenv`
+
 to run bot:
 
 `node index.js`
