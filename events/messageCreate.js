@@ -14,17 +14,17 @@ module.exports = {
         const cmdstr = args.shift().toLowerCase()
 
         let command = client.commands.get(cmdstr)
-        if (!command) () =>  {
+        if (!command) {
             return message.reply("This doesn't exist baka")
         }
 
         let member = message.member
-
+        console.log(command.devOnly)
         if (command.devOnly && !owners.includes(member.id)){
             return message.reply("That command is not for you sussy baka")
         }
 
-        if (command.permssions && member.permssions.missing(command.permssions).length !== 0){
+        if (command.permissions && member.permissions.missing(command.permissions).length !== 0){
             return message.reply("You lack skill issue to use this command")
         }
 
