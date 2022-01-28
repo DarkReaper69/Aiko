@@ -1,5 +1,4 @@
-const Discord = require("discord.js");
-const { owners } = require("..");
+const bot = require("../index");
 
 module.exports = {
   name: "messageCreate",
@@ -19,7 +18,7 @@ module.exports = {
     }
 
     let member = message.member;
-    console.log(command.devOnly);
+
     if (command.devOnly && !owners.includes(member.id)) {
       return message.reply("That command is not for you sussy baka");
     }
