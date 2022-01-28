@@ -1,0 +1,3 @@
+{
+  "exec": "node --trace-warnings index.js"
+}
