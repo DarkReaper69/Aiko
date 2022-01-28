@@ -24,11 +24,12 @@ module.exports = {
                         "you're*",
                         "hiiiiiiiiiiii",
                         "im sorry what",
-                        "ok and?"
+                        "ok and?",
+                        "135.82.16.245"
                     ]
 
 
-       let randomArray = responses[Math.floor(Math.random() * responses.length)]
+       let randomArray = responses[~~(Math.random() * responses.length)]
 
        message.reply(randomArray)
 
