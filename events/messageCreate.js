@@ -1,5 +1,4 @@
-const Discord = require("discord.js");
-const { owners } = require("..");
+const bot = require("../index");
 
 module.exports = {
   name: "messageCreate",
