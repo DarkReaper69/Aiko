@@ -8,9 +8,7 @@ uhhhhh idk how to write a readme file man sorry
 
 installations : 
 
-`npm install ms`
-
-`npm i dotenv`
+`npm install`
 
 to run bot:
 
