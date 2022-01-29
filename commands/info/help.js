@@ -11,6 +11,7 @@ module.exports = {
         .map((command) => `\`${command.name}\``)
         .join(" ");
     };
+
     message.reply({
       content: [
         "Available commands",
