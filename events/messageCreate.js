@@ -24,8 +24,8 @@ module.exports = {
     }
 
     if (
-      command.permssions &&
-      member.permssions.missing(command.permssions).length !== 0
+      command.permissions &&
+      member.permissions.missing(command.permissions).length !== 0
     ) {
       return message.reply("You lack skill issue to use this command");
     }
