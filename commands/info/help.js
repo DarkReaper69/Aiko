@@ -4,8 +4,20 @@ module.exports = {
   permissions: [],
   devOnly: false,
   run: ({ client, message, args }) => {
-    message.reply(
-      "**The following commands exists for now:**\n**Moderation Commands:**\n `ban`\n `kick` \n `timeout`\n**Normal Commands:**\n`ask`\n`ping`\n\nMore coming soon hopefully,tell dev not to be lazy"
-    );
+    const { commands } = client;
+    const flt = (commands, category) => {
+      return commands
+        .filter((command) => command.category === category)
+        .map((command) => `\`${command.name}\``)
+        .join(" ");
+    };
+    message.reply({
+      content: [
+        "Available commands",
+        `info: ${flt(commands, "info")}`,
+        `moderation: ${flt(commands, "moderation")}`,
+        `reponse: ${flt(commands, "response")}`,
+      ].join("\n"),
+    });
   },
 };
