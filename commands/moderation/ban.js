@@ -7,8 +7,8 @@ module.exports = {
     devOnly: false,
     run: async ({ client, message, args }) => {
         const target = message.mentions.users.first();
-        const memberTarget = message.guild.members.cache.get(target.id);
         if (!target) return message.channel.send(`I couldn't ban ${target}`);
+        const memberTarget = message.guild.members.cache.get(target.id);
         if (target && target.bannable) {
             memberTarget.ban();
             const embed = new MessageEmbed();
