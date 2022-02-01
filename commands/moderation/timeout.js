@@ -14,11 +14,8 @@ module.exports = {
         /**
          * A bit tricky so let me explain
          *
-         * - Destructuring: this equals to "args[0] & args[1]"
-         * - reason have a default value of "null" if nothing
-         *   is provided to avoid additional type check
-         * - A comma is added at the first part of the array
-         *   to skip the first element since we don't want that
+         * - Destructuring: this equals to "args[1] & args[2] and arge[0] is skipped"
+         * - reason have a default value of "null" if nothing is provided to avoid additional type check
          */
         const [, limit, reason = null] = args;
         if (!limit) {
