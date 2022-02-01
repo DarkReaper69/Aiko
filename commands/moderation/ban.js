@@ -27,7 +27,7 @@ module.exports = {
                 [
                     `${username}#${discriminator}`,
                     `has been banned by ${tag}`,
-                ].join("")
+                ].join(" ")
             ) // Avoiding making the string so long
             .setTimestamp();
 
