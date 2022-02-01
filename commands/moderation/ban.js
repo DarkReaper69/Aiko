@@ -6,21 +6,52 @@ module.exports = {
     permissions: ["BAN_MEMBERS"],
     devOnly: false,
     run: async ({ client, message, args }) => {
-        const target = message.mentions.users.first();
-        if (!target) return message.channel.send(`I couldn't ban ${target}`);
-        const memberTarget = message.guild.members.cache.get(target.id);
-        if (target && target.bannable) {
-            memberTarget.ban();
-            const embed = new MessageEmbed();
-            embed.setTitle("WOH! when the ban");
-            embed.setDescription(
-                `${target} has been banned by ${message.author.tag}`
-            );
+        /**
+         * Make sure to make the difference between
+         * user and member since the user may or may not
+         * be a member of teh guild (server) and a member
+         * is attached to the GuildMember class which
+         * the ban method is available only here
+         */
+        const user = message.mentions.users.first();
+        if (!user) return message.channel.send(`The user does not exists`);
 
-            embed.setTimestamp();
+        const member = message.guild.members.cache.get(user.id);
+        const { username, discriminator } = member.user;
+
+        const { tag } = message.author;
+
+        const embed = new MessageEmbed()
+            .setTitle("WOH! when the ban")
+            .setDescription(
+                [
+                    `${username}#${discriminator}`,
+                    `has been banned by ${tag}`,
+                ].join("")
+            ) // Avoiding making the string so long
+            .setTimestamp();
+
+        try {
+            /**
+             * The ban method retuns a promise
+             * So we must use `await` to make it
+             * run properly and asynchronously
+             */
+            await member.ban();
             message.channel.send({ embeds: [embed] });
-        } else {
-            message.channel.send(`I couldn't ban ${target} huh...`);
+        } catch (error) {
+            /**
+             * If we can't ban the member.
+             * Send the error message in discord
+             * and the console.
+             */
+            message.reply({ content: `Cannot ban ${username}` });
+            console.error(
+                [
+                    `Coudln't be able to ban ${username}`,
+                    `Availablity: ${member.bannable}`,
+                ].join("\n")
+            );
         }
     },
 };
