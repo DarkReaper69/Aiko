@@ -25,7 +25,7 @@ module.exports = {
       "hiiiiiiiiiiii",
       "im sorry what",
       "ok and?",
-      "135.82.16.245",
+      "uhhhhhhhh",
     ];
 
     let randomArray = responses[~~(Math.random() * responses.length)];
