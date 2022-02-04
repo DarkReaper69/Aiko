@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "cookie",
+    category: "info",
     permissions: [],
     devOnly: "false",
     run: ({client, message, args}) => {
@@ -16,7 +17,7 @@ module.exports = {
         let randomArray = responses[~~(Math.random() * responses.length)];
 
         const target = message.mentions.users.first();
-        if (!target) return message.channel.send(`I couldn't find ${target}`);
+        if (!target) return message.channel.send(`Mention the user you want to give cookie to`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
         const embed = new MessageEmbed();

@@ -15,7 +15,7 @@ module.exports = {
             message.channel.send(res.text)
         }).catch(err => {
             message.channel.send("Error occurred,try again")
-        })
+        });
         
-    }
-}
+    },
+};
