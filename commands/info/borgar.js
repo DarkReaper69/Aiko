@@ -17,7 +17,7 @@ module.exports = {
         let randomArray = responses[~~(Math.random() * responses.length)];
 
         const target = message.mentions.users.first();
-        if (!target) return message.channel.send(`Mention the user you want to give cookie to`);
+        if (!target) return message.channel.send(`Mention the user you want to give borgar to`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
         const embed = new MessageEmbed();
