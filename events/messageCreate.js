@@ -17,11 +17,11 @@ module.exports = {
       return message.reply("This doesn't exist baka");
     }
 
-    let member = message.member;
-
-    if (command.devOnly && !owners.includes(member.id)) {
+    if (command.devOnly && owners.includes(message.author.id)) {
       return message.reply("That command is not for you sussy baka");
     }
+
+    const { member } = message;
 
     if (
       command.permissions &&
