@@ -1,13 +1,17 @@
-const bot = require("../index");
-
 module.exports = {
   name: "messageCreate",
   run: async function runAll(bot, message) {
     const { client, prefix, owners } = bot;
 
-    if (!message.guild) return;
-    if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
+    const invalidUser = () => {
+      return (
+        !message.guild &&
+        message.author.bot &&
+        !message.content.startsWith(prefix)
+      );
+    };
+
+    if (invalidUser()) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmdstr = args.shift().toLowerCase();
