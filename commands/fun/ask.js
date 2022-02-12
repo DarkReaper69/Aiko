@@ -1,6 +1,6 @@
 module.exports = {
     name: "ask",
-    category: "info",
+    category: "fun",
     permisssions: [],
     devOnly: false,
     run: ({ client, message, args }) => {
