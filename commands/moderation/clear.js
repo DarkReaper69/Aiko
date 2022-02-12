@@ -2,7 +2,7 @@ module.exports = {
     name: "clear",
     category: "moderation",
     permissions: ["MANAGE_MEMBERS"],
-    devOnly: "false",
+    devOnly: false,
     run: async ({ client, message, args }) => {
         if(!args[0]) return 
             message.channel.send('Please specify the number of messages to delete.');
