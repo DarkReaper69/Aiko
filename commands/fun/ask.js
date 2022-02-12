@@ -26,6 +26,13 @@ module.exports = {
         "im sorry what",
         "ok and?",
         "uhhhhhhhh",
+        "cool",
+        "mhm mhm",
+        "wow so cool :000",
+        "yeshhhh",
+        "ywusss",
+        "nuuuuuu",
+        "nooooo :(("
       ];
   
       let randomArray = responses[~~(Math.random() * responses.length)];
