@@ -23,7 +23,8 @@ module.exports = {
         const embed = new MessageEmbed();
             embed.setTitle("BORGARRR")
             embed.setDescription(` ${message.author.tag} gave ${target} a borgar!`);
-            embed.setImage(url=`${randomArray}`); 
+            embed.setImage(url=`${randomArray}`);
+            embed.setColor("ORANGE");
 
             embed.setTimestamp();
             message.channel.send({ embeds: [embed] });

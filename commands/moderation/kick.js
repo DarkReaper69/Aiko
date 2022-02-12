@@ -30,6 +30,7 @@ module.exports = {
                 ].join(" ")
             ) // Avoiding making the string so long
             .setTimestamp();
+            embed.setColor("RED");
 
         try {
             /**

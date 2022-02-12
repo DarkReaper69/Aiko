@@ -23,7 +23,8 @@ module.exports = {
         const embed = new MessageEmbed();
             embed.setTitle("CUTEEEE")
             embed.setDescription(`${target} has been patted by ${message.author.tag}`);
-            embed.setImage(url=`${randomArray}`); 
+            embed.setImage(url=`${randomArray}`);
+            embed.setColor("LUMINOUS_VIVID_PINK"); 
 
             embed.setTimestamp();
             message.channel.send({ embeds: [embed] });

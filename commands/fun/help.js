@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
   name: "help",
   category: "fun",
@@ -12,12 +14,12 @@ module.exports = {
         .join(" ");
     };
 
-    message.reply({
-      content: [
-        "Available commands",
-        `fun: ${flt(commands, "fun")}`,
-        `moderation: ${flt(commands, "moderation")}`,
-      ].join("\n"),
-    });
+    const embed = new MessageEmbed();
+            embed.setTitle("HELP IS HEREEE\nAvailable commands")
+            embed.setDescription(`Fun: ${flt(commands,"fun")}\nModeration :${flt(commands,"moderation")}`);
+            embed.setColor("AQUA");
+
+            embed.setTimestamp();
+            message.channel.send({ embeds: [embed] })
   },
 };

@@ -23,7 +23,8 @@ module.exports = {
         const embed = new MessageEmbed();
             embed.setTitle("Woh! COOOKIIESS")
             embed.setDescription(` ${message.author.tag} gave ${target} a cookie!`);
-            embed.setImage(url=`${randomArray}`); 
+            embed.setImage(url=`${randomArray}`);
+            embed.setColor("BLUE"); 
 
             embed.setTimestamp();
             message.channel.send({ embeds: [embed] });
