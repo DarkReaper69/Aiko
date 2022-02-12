@@ -29,8 +29,8 @@ module.exports = {
                     `has been banned by ${tag}`,
                 ].join(" ")
             ) // Avoiding making the string so long
-            .setTimestamp();
-            embed.setColor("RED");
+            .setTimestamp()
+            .setColor("RED");
 
         try {
             /**
