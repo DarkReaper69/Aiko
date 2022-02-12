@@ -4,7 +4,7 @@ module.exports = {
     name: "cookie",
     category: "info",
     permissions: [],
-    devOnly: "false",
+    devOnly: false,
     run: ({client, message, args}) => {
 
         let responses = ["https://media.discordapp.net/attachments/938426992427147274/938427473568346142/cookie_5.gif",
