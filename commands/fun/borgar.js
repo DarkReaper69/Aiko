@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "borgar",
-    category: "info",
+    category: "fun",
     permissions: [],
     devOnly: "false",
     run: ({client, message, args}) => {

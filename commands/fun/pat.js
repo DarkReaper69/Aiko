@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "pat",
-    category: "info",
+    category: "fun",
     permissions: [],
     run: ({client, message, args}) => {
 

@@ -1,6 +1,6 @@
 module.exports = {
   name: "help",
-  category: "info",
+  category: "fun",
   permissions: [],
   devOnly: false,
   run: ({ client, message, args }) => {
@@ -15,9 +15,8 @@ module.exports = {
     message.reply({
       content: [
         "Available commands",
-        `info: ${flt(commands, "info")}`,
+        `fun: ${flt(commands, "fun")}`,
         `moderation: ${flt(commands, "moderation")}`,
-        `reponse: ${flt(commands, "response")}`,
       ].join("\n"),
     });
   },

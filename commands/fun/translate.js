@@ -1,10 +1,9 @@
 const discord = require('discord.js')
 const translate = require('@iamtraction/google-translate')
 
-
 module.exports = {
     name: "translate",
-    category: "info",
+    category: "ifun",
     permissions: [],
     devOnly: false,
     run: async ({client, message, args}) => {
