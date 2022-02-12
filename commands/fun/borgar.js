@@ -4,7 +4,7 @@ module.exports = {
     name: "borgar",
     category: "fun",
     permissions: [],
-    devOnly: "false",
+    devOnly: false,
     run: ({client, message, args}) => {
 
         let responses = ["https://media.discordapp.net/attachments/938426992427147274/939033388122271754/borgar_1.gif",
