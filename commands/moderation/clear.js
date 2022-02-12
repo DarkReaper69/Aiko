@@ -4,20 +4,15 @@ module.exports = {
     permissions: ["MANAGE_MEMBERS"],
     devOnly: false,
     run: async ({ client, message, args }) => {
-        if(!args[0]) return 
-            message.channel.send('Please specify the number of messages to delete.');
 
-        if(isNaN(args[0])) return 
-            message.channel.send('Please specify a valid number.');
+        let count = parseFloat(message.args[0]) + 1;
+            count = count > 100 ? 100 : count;
 
-        if(args[0] > 100) return 
-            message.channel.send('Please specify a number less than 100.');
+            if (isNaN(count)) return 
+                message.channel.send("when the number");
 
-        if(args[0] < 1) return 
-            message.channel.send('Please specify a number greater than 1.');
-
-        message.channel.bulkDelete(args[0]).then(() => {
-            message.channel.send(`Successfully deleted ${args[0]} messages.`).then(msg => msg.delete({timeout: 5000}));
+        message.channel.bulkDelete(count).then(() => {
+            message.channel.send(`Successfully deleted ${count} messages.`).then(msg => msg.delete({timeout: 5000}));
         });
     },
 };
