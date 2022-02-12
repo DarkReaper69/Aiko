@@ -15,7 +15,7 @@ module.exports = {
     };
 
     const embed = new MessageEmbed();
-            embed.setTitle("HELP IS HEREEE\nAvailable commands")
+            embed.setTitle("HELP IS HEREEE\nAvailable commands:")
             embed.setDescription(`Fun: ${flt(commands,"fun")}\nModeration :${flt(commands,"moderation")}`);
             embed.setColor("AQUA");
 
