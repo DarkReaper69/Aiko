@@ -6,7 +6,7 @@ module.exports = {
   run: async ({ client, message, args }) => {
     let [purgeAmount] = args;
     if (isNaN(parseInt(purgeAmount))) {
-      return message.channel.send({ content: "not a number" });
+      return message.channel.send({ content: "Specify a valid number dummy" });
     }
 
     if (purgeAmount < 1 || purgeAmount > 100) {
