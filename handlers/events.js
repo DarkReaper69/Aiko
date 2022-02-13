@@ -30,10 +30,10 @@ function triggerEventHandler(bot, event, ...args) {
   }
 
   try {
-    const event = client.events.get(event);
-    event.run(bot, ...args);
+    const eventToTrigger = client.events.get(event);
+    eventToTrigger.run(bot, ...args);
   } catch (err) {
-    throw new Error(`The event "${event}" have failed to be triggered`);
+    throw new Error(`An event have failed to be triggered, ${err}`);
   }
 }
 
