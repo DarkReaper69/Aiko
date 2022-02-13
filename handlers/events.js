@@ -5,9 +5,7 @@ module.exports = (bot, reload) => {
 
   let events = getFiles("./events/", ".js");
 
-  if (events.length === 0) {
-    console.log("No events to load");
-  }
+  if (events.length === 0) throw new Error("Events collection is empty.");
 
   events.forEach((f, i) => {
     if (reload) delete require.cache[require.resolve(`../events/${f}`)];
@@ -23,11 +21,19 @@ module.exports = (bot, reload) => {
 function triggerEventHandler(bot, event, ...args) {
   const { client } = bot;
 
+  if (typeof event !== "string" && !client.events.has(event)) {
+    const message = [
+      "The event you tried to trigger is either",
+      "not a string or isn't available in your collection of events",
+    ];
+    throw new Error(message.join(" "));
+  }
+
   try {
-    if (client.events.has(event)) client.events.get(event).run(bot, ...args);
-    else throw new Error(`Event ${event} does not exist`);
+    const eventToTrigger = client.events.get(event);
+    eventToTrigger.run(bot, ...args);
   } catch (err) {
-    console.error(err);
+    throw new Error(`An event have failed to be triggered, ${err}`);
   }
 }
 

@@ -3,3 +3,4 @@ package-lock.json
 node_modules/
 h.txt
 responses.json
+.vscode
