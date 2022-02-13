@@ -22,7 +22,7 @@ module.exports = {
             embed.setTitle("FLOOSHED")
             embed.setDescription(`${target} has been kissed by ${message.author.tag}`);
             embed.setImage(url=`${randomArray}`);
-            embed.setColor("BLURPLE") 
+            embed.setColor("AQUA") 
 
             embed.setTimestamp();
             message.channel.send({ embeds: [embed] });
