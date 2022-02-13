@@ -3,29 +3,21 @@ module.exports = {
   category: "moderation",
   permissions: ["MANAGE_MEMBERS"],
   devOnly: false,
-  run: async ({ client, message, args: [purgeAmount] }) => {
+  run: async ({ client, message, args }) => {
+    let [purgeAmount] = args;
     if (isNaN(parseInt(purgeAmount))) {
       return message.channel.send({ content: "not a number" });
     }
 
-    let newPurgeAmount = 0;
-    typeof purgeAmount === "number" && purgeAmount < 5
-      ? (newPurgeAmount = 5)
-      : purgeAmount;
-
-    const count = parseInt(purgeAmount) + 1;
-
-    if (count < 0 || count > 100) {
+    if (purgeAmount < 1 || purgeAmount > 100) {
       return message.channel.send({ content: "Not a valid amount" });
     }
 
+    purgeAmount = parseInt(purgeAmount);
+
     try {
-      await message.channel.bulkDelete(count);
-      message.channel
-        .send(`Successfully deleted ${count} messages.`)
-        .then((msg) => {
-          msg.delete({ timeout: 5000 });
-        });
+      await message.channel.bulkDelete(purgeAmount);
+      message.channel.send(`Successfully deleted ${purgeAmount} messages.`);
     } catch (error) {
       console.log(error);
     }
