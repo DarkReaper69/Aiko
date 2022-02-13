@@ -2,9 +2,9 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "cookie",
-    category: "info",
+    category: "fun",
     permissions: [],
-    devOnly: "false",
+    devOnly: false,
     run: ({client, message, args}) => {
 
         let responses = ["https://media.discordapp.net/attachments/938426992427147274/938427473568346142/cookie_5.gif",
@@ -23,7 +23,8 @@ module.exports = {
         const embed = new MessageEmbed();
             embed.setTitle("Woh! COOOKIIESS")
             embed.setDescription(` ${message.author.tag} gave ${target} a cookie!`);
-            embed.setImage(url=`${randomArray}`); 
+            embed.setImage(url=`${randomArray}`);
+            embed.setColor("BLUE"); 
 
             embed.setTimestamp();
             message.channel.send({ embeds: [embed] });

@@ -2,9 +2,9 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "borgar",
-    category: "info",
+    category: "fun",
     permissions: [],
-    devOnly: "false",
+    devOnly: false,
     run: ({client, message, args}) => {
 
         let responses = ["https://media.discordapp.net/attachments/938426992427147274/939033388122271754/borgar_1.gif",
@@ -17,13 +17,14 @@ module.exports = {
         let randomArray = responses[~~(Math.random() * responses.length)];
 
         const target = message.mentions.users.first();
-        if (!target) return message.channel.send(`Mention the user you want to give cookie to`);
+        if (!target) return message.channel.send(`Mention the user you want to give borgar to`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
         const embed = new MessageEmbed();
             embed.setTitle("BORGARRR")
             embed.setDescription(` ${message.author.tag} gave ${target} a borgar!`);
-            embed.setImage(url=`${randomArray}`); 
+            embed.setImage(url=`${randomArray}`);
+            embed.setColor("ORANGE");
 
             embed.setTimestamp();
             message.channel.send({ embeds: [embed] });

@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "kiss",
-    category: "info",
+    category: "fun",
     permissions: [],
     run: ({client, message, args}) => {
 
@@ -21,7 +21,8 @@ module.exports = {
         const embed = new MessageEmbed();
             embed.setTitle("FLOOSHED")
             embed.setDescription(`${target} has been kissed by ${message.author.tag}`);
-            embed.setImage(url=`${randomArray}`); 
+            embed.setImage(url=`${randomArray}`);
+            embed.setColor("BLURPLE") 
 
             embed.setTimestamp();
             message.channel.send({ embeds: [embed] });

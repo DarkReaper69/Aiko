@@ -9,7 +9,7 @@ module.exports = {
         /**
          * Make sure to make the difference between
          * user and member since the user may or may not
-         * be a member of teh guild (server) and a member
+         * be a member of the guild (server) and a member
          * is attached to the GuildMember class which
          * the kick method is available only here
          */
@@ -29,7 +29,8 @@ module.exports = {
                     `has been kicked by ${tag}`,
                 ].join(" ")
             ) // Avoiding making the string so long
-            .setTimestamp();
+            .setTimestamp()
+            .setColor("RED");
 
         try {
             /**

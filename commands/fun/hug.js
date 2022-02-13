@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "hug",
-    category: "info",
+    category: "fun",
     permissions: [],
     run: ({client, message, args}) => {
 
@@ -23,7 +23,8 @@ module.exports = {
         const embed = new MessageEmbed();
             embed.setTitle("Woh! Huggies")
             embed.setDescription(`${target} has been hugged by ${message.author.tag}`);
-            embed.setImage(url=`${randomArray}`); 
+            embed.setImage(url=`${randomArray}`);
+            embed.setColor("DARK_AQUA"); 
 
             embed.setTimestamp();
             message.channel.send({ embeds: [embed] });

@@ -14,7 +14,7 @@ module.exports = {
         /**
          * A bit tricky so let me explain
          *
-         * - Destructuring: this equals to "args[1] & args[2] and arge[0] is skipped"
+         * - Destructuring: this equals to "args[1] & args[2] and args[0] is skipped"
          * - reason have a default value of "null" if nothing is provided to avoid additional type check
          */
         const [, limit, reason = null] = args;
