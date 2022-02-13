@@ -14,10 +14,10 @@ module.exports = {
         .setAuthor({ name: `${target.username}`, iconURL: `${target.displayAvatarURL({ dynamic: true, size: 512 })}` })
         .setThumbnail(target.displayAvatarURL({dynamic: true}))
         .setColor("BLURPLE")
-        .addField("UserID", `${target.id}`, false)
-        .addField("Roles", `${member.roles.cache.map(r => r).join(' ')}`)
-        .addField("Server Member Since", `${moment(member.joinedAt).format('MMMM Do YYYY, h:mm:ss a')}\n**-** ${moment(member.joinedAt).startOf('day').fromNow()}`)
-        .addField("Discord User Since", `${moment(target.createdAt).format('MMMM Do YYYY, h:mm:ss a')}\n**-** ${moment(target.createdAt).startOf('day').fromNow()}`)
+        .addField("UserID :", `${target.id}`, false)
+        .addField("Roles :", `${member.roles.cache.map(r => r).join(' ')}`)
+        .addField("Server Member Since :", `${moment(member.joinedAt).format('MMMM Do YYYY, h:mm:ss a')}\n**-** ${moment(member.joinedAt).startOf('day').fromNow()}`)
+        .addField("Discord User Since :", `${moment(target.createdAt).format('MMMM Do YYYY, h:mm:ss a')}\n**-** ${moment(target.createdAt).startOf('day').fromNow()}`)
          message.reply({embeds: [response]});
     },
         
