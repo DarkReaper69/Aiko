@@ -11,7 +11,7 @@ module.exports = {
       return commands
         .filter((command) => command.category === category)
         .map((command) => `\`${command.name}\``)
-        .join(" ");
+        .join(" , ");
     };
 
     const embed = new MessageEmbed();
