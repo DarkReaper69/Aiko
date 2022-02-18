@@ -16,12 +16,13 @@ module.exports = {
         if (!target) return message.channel.send(`I couldn't find ${target}`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
-        const embed = new MessageEmbed();
-            embed.setTitle("SPANKED")
-            embed.setDescription(`${target} has been spanked by ${message.author.tag}`);
-            embed.setImage(url=`${randomArray}`); 
+        const embed = new MessageEmbed()
+            .setTitle("SPANKED")
+            .setDescription(`${target} has been spanked by ${message.author.tag}`)
+            .setDescription(`${target} has been spanked by ${message.author.tag}`)
+            .setImage(url=`${randomArray}`) 
 
-            embed.setTimestamp();
+            .setTimestamp();
             message.channel.send({ embeds: [embed] });
   },
 };

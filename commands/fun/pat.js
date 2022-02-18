@@ -20,13 +20,13 @@ module.exports = {
         if (!target) return message.channel.send(`I couldn't find ${target}`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
-        const embed = new MessageEmbed();
-            embed.setTitle("CUTEEEE")
-            embed.setDescription(`${target} has been patted by ${message.author.tag}`);
-            embed.setImage(url=`${randomArray}`);
-            embed.setColor("LUMINOUS_VIVID_PINK"); 
+        const embed = new MessageEmbed()
+            .setTitle("CUTEEEE")
+            .setDescription(`${target} has been patted by ${message.author.tag}`)
+            .setImage(url=`${randomArray}`)
+            .setColor("LUMINOUS_VIVID_PINK")
 
-            embed.setTimestamp();
+            .setTimestamp();
             message.channel.send({ embeds: [embed] });
   },
 };

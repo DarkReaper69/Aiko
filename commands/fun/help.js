@@ -14,12 +14,12 @@ module.exports = {
         .join(" , ");
     };
 
-    const embed = new MessageEmbed();
-            embed.setTitle("HELP IS HEREEE\nAvailable commands:")
-            embed.setDescription(`Fun: ${flt(commands,"fun")}\nModeration :${flt(commands,"moderation")}`);
-            embed.setColor("AQUA");
+    const embed = new MessageEmbed()
+            .setTitle("HELP IS HEREEE\nAvailable commands:")
+            .setDescription(`Fun: ${flt(commands,"fun")}\nModeration :${flt(commands,"moderation")}`)
+            .setColor("AQUA")
 
-            embed.setTimestamp();
+            .setTimestamp();
             message.channel.send({ embeds: [embed] })
   },
 };

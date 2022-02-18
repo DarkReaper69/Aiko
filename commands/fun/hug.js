@@ -20,13 +20,13 @@ module.exports = {
         if (!target) return message.channel.send(`I couldn't find ${target}`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
-        const embed = new MessageEmbed();
-            embed.setTitle("Woh! Huggies")
-            embed.setDescription(`${target} has been hugged by ${message.author.tag}`);
-            embed.setImage(url=`${randomArray}`);
-            embed.setColor("DARK_AQUA"); 
+        const embed = new MessageEmbed()
+            .setTitle("Woh! Huggies")
+            .setDescription(`${target} has been hugged by ${message.author.tag}`)
+            .setImage(url=`${randomArray}`)
+            .setColor("DARK_AQUA") 
 
-            embed.setTimestamp();
+            .setTimestamp();
             message.channel.send({ embeds: [embed] });
   },
 };

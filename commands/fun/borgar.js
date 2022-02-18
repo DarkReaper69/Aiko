@@ -20,13 +20,13 @@ module.exports = {
         if (!target) return message.channel.send(`Mention the user you want to give borgar to`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
-        const embed = new MessageEmbed();
-            embed.setTitle("BORGARRR")
-            embed.setDescription(` ${message.author.tag} gave ${target} a borgar!`);
-            embed.setImage(url=`${randomArray}`);
-            embed.setColor("ORANGE");
+        const embed = new MessageEmbed()
+            .setTitle("BORGARRR")
+            .setDescription(` ${message.author.tag} gave ${target} a borgar!`)
+            .setImage(url=`${randomArray}`)
+            .setColor("ORANGE")
 
-            embed.setTimestamp();
+            .setTimestamp();
             message.channel.send({ embeds: [embed] });
     },
 };

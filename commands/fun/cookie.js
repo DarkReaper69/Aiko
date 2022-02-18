@@ -20,13 +20,13 @@ module.exports = {
         if (!target) return message.channel.send(`Mention the user you want to give cookie to`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
-        const embed = new MessageEmbed();
-            embed.setTitle("Woh! COOOKIIESS")
-            embed.setDescription(` ${message.author.tag} gave ${target} a cookie!`);
-            embed.setImage(url=`${randomArray}`);
-            embed.setColor("BLUE"); 
+        const embed = new MessageEmbed()
+            .setTitle("Woh! COOOKIIESS")
+            .setDescription(` ${message.author.tag} gave ${target} a cookie!`)
+            .setImage(url=`${randomArray}`)
+            .setColor("BLUE") 
 
-            embed.setTimestamp();
+            .setTimestamp();
             message.channel.send({ embeds: [embed] });
     },
 };

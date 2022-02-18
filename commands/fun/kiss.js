@@ -18,13 +18,13 @@ module.exports = {
         if (!target) return message.channel.send(`I couldn't find ${target}`);
         const memberTarget = message.guild.members.cache.get(target.id);
 
-        const embed = new MessageEmbed();
-            embed.setTitle("FLOOSHED")
-            embed.setDescription(`${target} has been kissed by ${message.author.tag}`);
-            embed.setImage(url=`${randomArray}`);
-            embed.setColor("AQUA") 
+        const embed = new MessageEmbed()
+            .setTitle("FLOOSHED")
+            .setDescription(`${target} has been kissed by ${message.author.tag}`)
+            .setImage(url=`${randomArray}`)
+            .setColor("AQUA") 
 
-            embed.setTimestamp();
+            .setTimestamp();
             message.channel.send({ embeds: [embed] });
   },
 };
