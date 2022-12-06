@@ -6,7 +6,7 @@ module.exports = {
     console.log("Logged in as " + bot.client.user.tag);
 
     client.user.setPresence({
-      activities: [{ name: `to p!help`, type: `LISTENING` }],
+      activities: [{ name: `to %help`, type: `LISTENING` }],
       status: `online`,
     });
   },

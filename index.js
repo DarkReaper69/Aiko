@@ -7,7 +7,7 @@ const client = new Discord.Client({
 
 let bot = {
   client,
-  prefix: "p!",
+  prefix: "%",
   owners: ["549288150841950218"],
 };
 
